@@ -1,14 +1,12 @@
 import React, { FunctionComponent } from "react";
-import { Provider } from "react-redux";
-import store from "../config/store";
-import Player from "../features/player";
+import World from "../features/world";
 
-interface GameProps {
-  playerPosition: [];
-}
-
-const Game: FunctionComponent<GameProps> = ({ playerPosition }) => {
-  return <Player position={playerPosition} />;
+const Game: FunctionComponent = () => {
+  return (
+    <div style={{}}>
+      <World />
+    </div>
+  );
 };
 
 export default Game;

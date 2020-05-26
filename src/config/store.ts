@@ -6,11 +6,9 @@ import playerReducer from "../features/player/reducer";
 const rootReducer = combineReducers({
   player: playerReducer,
 });
-const initialState = {};
 
 const store = createStore(
   rootReducer,
-  initialState,
   composeWithDevTools(applyMiddleware(thunk))
 );
 

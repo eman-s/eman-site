@@ -1,15 +1,14 @@
 import React, { FunctionComponent } from "react";
 import sprite from "./player_walk.png";
+import { connect } from "react-redux";
+import handleMovement from "./movement";
 
-interface PlayerProps {
-  position: [];
-}
-
-const Player: FunctionComponent<PlayerProps> = ({ position }) => {
+const Player: FunctionComponent = () => {
+  const position = [0, 0];
   return (
     <div
       style={{
-        position: "relative",
+        position: "absolute",
         top: position[1],
         left: position[0],
         backgroundImage: `url('${sprite}')`,
@@ -21,4 +20,10 @@ const Player: FunctionComponent<PlayerProps> = ({ position }) => {
   );
 };
 
-export default Player;
+const mapStateToProps = (state: any) => {
+  return {
+    ...state.player,
+  };
+};
+
+export default connect(mapStateToProps)(handleMovement(Player));

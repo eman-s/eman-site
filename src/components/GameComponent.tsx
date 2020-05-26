@@ -6,7 +6,14 @@ import Game from "./Game";
 const GameComponent: FunctionComponent = () => {
   return (
     <Provider store={store}>
-      <Game playerPosition={[]} />
+      <div
+        style={{
+          margin: "20px auto",
+          position: "relative",
+        }}
+      >
+        <Game />
+      </div>
     </Provider>
   );
 };
