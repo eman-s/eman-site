@@ -12,7 +12,10 @@ const Player: FunctionComponent<PlayerProps> = ({ position }) => {
         position: "relative",
         top: position[1],
         left: position[0],
-        backgroundImage: `url("${sprite}")`,
+        backgroundImage: `url('${sprite}')`,
+        backgroundPosition: "0 0",
+        width: "40px",
+        height: "40px",
       }}
     />
   );
