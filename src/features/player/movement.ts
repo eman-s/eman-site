@@ -1,4 +1,4 @@
-import store from "../../config/store";
+import store from "../../config/root-reducer";
 import { SPRITE_SIZE } from "../../config/constants";
 
 const handleMovement = (player: any) => {
@@ -40,9 +40,15 @@ const handleMovement = (player: any) => {
         console.log(e.keyCode);
     }
   };
-  window.addEventListener("keydown", (e) => {
+
+  // window.addEventListener("keydown", (e) => {
+  //   handleKeyDown(e);
+  // });
+
+  window.addEventListener("keydown", ((e: KeyboardEvent) => {
     handleKeyDown(e);
-  });
+  }) as EventListener);
+
   return player;
 };
 

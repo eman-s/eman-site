@@ -1,20 +1,23 @@
 import React, { FunctionComponent } from "react";
 import { Provider } from "react-redux";
-import store from "../config/store";
+import store from "../config/root-reducer";
 import Game from "./Game";
+import { Store } from "redux";
 
-const GameComponent: FunctionComponent = () => {
+interface GameProps {
+  store: Store;
+}
+
+const GameComponent: React.FC = (GameProps) => {
   return (
-    <Provider store={store}>
-      <div
-        style={{
-          margin: "20px auto",
-          position: "relative",
-        }}
-      >
-        <Game />
-      </div>
-    </Provider>
+    <div
+      style={{
+        margin: "20px auto",
+        position: "relative",
+      }}
+    >
+      <Game />
+    </div>
   );
 };
 
